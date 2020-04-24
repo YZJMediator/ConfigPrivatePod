@@ -7,7 +7,7 @@ git stash pop
 ConflicCount=$(git ls-files -u | wc -l)
 if [ "$ConflicCount" -gt 0 ] ; then
    echo "git有冲突，请执行git status查看冲突文件"
-   return 1
+   exit 1
 fi
 
 Repo="DUSpecs"
