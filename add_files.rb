@@ -2,7 +2,7 @@ require 'xcodeproj'
 
 projectName = ARGV[0]
 lan = ARGV[1]
-extension = ARGV[1]
+extension = ARGV[2]
 project_path = "../#{projectName}"
 project_file_path = "../#{projectName}/#{projectName}.xcodeproj"
 main_file_path = "../#{projectName}/#{projectName}/#{projectName}" 
