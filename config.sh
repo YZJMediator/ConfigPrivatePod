@@ -130,6 +130,7 @@ sed -i "" "s%__ProjectName__%${projectName}%g" "$targetPath"
 sed -i "" "s%__ProjectName__%${projectName}%g" "$extensionPath"
 sed -i "" "s%__ProjectName__%${projectName}%g" "$vcPath"
 
+ruby add_files.rb $projectName swift 1
 echo "edit finished"
 
 echo "cleaning..."
