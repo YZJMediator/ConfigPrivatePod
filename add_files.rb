@@ -37,7 +37,7 @@ def add_specs(project_relative_path, project, group)
     end
 end
 
-if extension == "1" 
+if extension == "1"
     add_group(main_file_path, project, projectName)
     add_group(extension_file_path, project, projectName)
 end
