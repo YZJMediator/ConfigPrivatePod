@@ -11,7 +11,7 @@ if [ "$ConflicCount" -gt 0 ] ; then
 fi
 
 Repo="DUSpecs"
-RepoList=("DUSpecs" "DUSpecs_dev" "DUSpecs_test" "DUSpecs_gray")
+RepoList=("DUSpecs" "DUSpecs_test" "DUSpecs_gray" "DUSpecs_dev")
 getRepo() {
     echo -e "\n"
     length=${#RepoList[@]}
