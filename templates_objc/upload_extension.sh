@@ -65,6 +65,12 @@ if [ "$Repo" == "DUSpecs" ]; then
   NewGrayVersionNumber=0
 fi
 
+if [ "$Repo" == "DUSpecs_dev" ]; then
+  NewDevelopVersionNumber=$(($DevelopVersionNumber + 1))
+  NewTestVersionNumber=0
+  NewGrayVersionNumber=0
+fi
+
 if [ "$Repo" == "DUSpecs_test" ]; then
   NewTestVersionNumber=$(($TestVersionNumber + 1))
 fi
