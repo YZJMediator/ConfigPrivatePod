@@ -77,17 +77,17 @@ uploadFilePath="../${projectName}/upload.sh"
 uploadExtensionFilePath="../${projectName}/upload_extension.sh"
 podfilePath="../${projectName}/Podfile"
 
-targetHeaderPath="../${projectName}/${projectName}/${projectName}/Target/Target_${projectName}.h"
-targetPath="../${projectName}/${projectName}/${projectName}/Target/Target_${projectName}.m"
+targetHeaderPath="../${projectName}/${projectName}/Source/Target/Target_${projectName}.h"
+targetPath="../${projectName}/${projectName}/Source/Target/Target_${projectName}.m"
 
-extensionHeaderPath="../${projectName}/${projectName}/${projectName}_Category/CTMediator+${projectName}.h"
-extensionPath="../${projectName}/${projectName}/${projectName}_Category/CTMediator+${projectName}.m"
+extensionHeaderPath="../${projectName}/${projectName}/Category/CTMediator+${projectName}.h"
+extensionPath="../${projectName}/${projectName}/Category/CTMediator+${projectName}.m"
 
 vcHeaderPath="../${projectName}/${projectName}/ViewController.h"
 vcPath="../${projectName}/${projectName}/ViewController.m"
 
-mkdir -p "../${projectName}/${projectName}/${projectName}/Target"
-mkdir -p "../${projectName}/${projectName}/${projectName}_Category"
+mkdir -p "../${projectName}/${projectName}/Source/Target"
+mkdir -p "../${projectName}/${projectName}/Category"
 
 echo "copy to $licenseFilePath"
 cp -f ./templates_objc/FILE_LICENSE "$licenseFilePath"

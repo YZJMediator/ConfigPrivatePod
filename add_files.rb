@@ -5,9 +5,9 @@ lan = ARGV[1]
 extension = ARGV[2]
 project_path = "../#{projectName}"
 project_file_path = "../#{projectName}/#{projectName}.xcodeproj"
-main_file_path = "../#{projectName}/#{projectName}/#{projectName}" 
+main_file_path = "../#{projectName}/#{projectName}/Source" 
 extension_suffix = lan == "oc" ? "Category" : "Extension"
-extension_file_path = "../#{projectName}/#{projectName}/#{projectName}_#{extension_suffix}" 
+extension_file_path = "../#{projectName}/#{projectName}/#{extension_suffix}" 
 project = Xcodeproj::Project.open(project_file_path)
 
 def add_group(relative_path, project, group)
