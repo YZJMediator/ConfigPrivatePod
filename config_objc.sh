@@ -10,49 +10,55 @@ homePage=""
 confirmed="n"
 
 getProjectName() {
-    read -p "Enter Project Name: " projectName
+  read -p "Enter Project Name: " projectName
 
-    if test -z "$projectName"; then
-        getProjectName
-    fi
+  if test -z "$projectName"; then
+    getProjectName
+  fi
+
+  projectNameLength=${#projectName}
+  if [ $projectNameLength -ge 31 ]; then
+    echo "项目名称的长度不能大于30"
+    getProjectName
+  fi
 }
 
 getHTTPSRepo() {
-    read -p "Enter HTTPS Repo URL: " httpsRepo
+  read -p "Enter HTTPS Repo URL: " httpsRepo
 
-    if test -z "$httpsRepo"; then
-        getHTTPSRepo
-    fi
+  if test -z "$httpsRepo"; then
+    getHTTPSRepo
+  fi
 }
 
 getSSHRepo() {
-    read -p "Enter SSH Repo URL: " sshRepo
+  read -p "Enter SSH Repo URL: " sshRepo
 
-    if test -z "$sshRepo"; then
-        getSSHRepo
-    fi
+  if test -z "$sshRepo"; then
+    getSSHRepo
+  fi
 }
 
 getHomePage() {
-    read -p "Enter Home Page URL: " homePage
+  read -p "Enter Home Page URL: " homePage
 
-    if test -z "$homePage"; then
-        getHomePage
-    fi
+  if test -z "$homePage"; then
+    getHomePage
+  fi
 }
 
 getInfomation() {
-    getProjectName
-    getHTTPSRepo
-    getSSHRepo
-    getHomePage
+  getProjectName
+  getHTTPSRepo
+  getSSHRepo
+  getHomePage
 
-    echo -e "\n${Default}================================================"
-    echo -e "  Project Name  :  ${Cyan}${projectName}${Default}"
-    echo -e "  HTTPS Repo    :  ${Cyan}${httpsRepo}${Default}"
-    echo -e "  SSH Repo      :  ${Cyan}${sshRepo}${Default}"
-    echo -e "  Home Page URL :  ${Cyan}${homePage}${Default}"
-    echo -e "================================================\n"
+  echo -e "\n${Default}================================================"
+  echo -e "  Project Name  :  ${Cyan}${projectName}${Default}"
+  echo -e "  HTTPS Repo    :  ${Cyan}${httpsRepo}${Default}"
+  echo -e "  SSH Repo      :  ${Cyan}${sshRepo}${Default}"
+  echo -e "  Home Page URL :  ${Cyan}${homePage}${Default}"
+  echo -e "================================================\n"
 }
 
 echo -e "\n"
@@ -62,10 +68,10 @@ echo -e "\n"
 
 while [ "$confirmed" != "y" -a "$confirmed" != "Y" ]
 do
-    if [ "$confirmed" == "n" -o "$confirmed" == "N" ]; then
-        getInfomation
-    fi
-    read -p "confirm? (y/n):" confirmed
+  if [ "$confirmed" == "n" -o "$confirmed" == "N" ]; then
+    getInfomation
+  fi
+  read -p "confirm? (y/n):" confirmed
 done
 
 licenseFilePath="../${projectName}/FILE_LICENSE"
