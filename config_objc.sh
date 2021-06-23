@@ -9,6 +9,7 @@ sshRepo=""
 homePage=""
 confirmed="n"
 
+# 1.获取projectName、httpsRepo、sshRepo、homePage
 getProjectName() {
   read -p "Enter Project Name: " projectName
 
@@ -61,11 +62,13 @@ getInfomation() {
   echo -e "================================================\n"
 }
 
+# 拉取ConfigPrivatePod仓库最新代码
 echo -e "\n"
 git pull origin master --tags
 echo -e "\n"
 echo -e "\n"
 
+# 调用getInfomation方法获取projectName、httpsRepo、sshRepo、homePage
 while [ "$confirmed" != "y" -a "$confirmed" != "Y" ]
 do
   if [ "$confirmed" == "n" -o "$confirmed" == "N" ]; then
@@ -154,6 +157,8 @@ ruby add_files.rb $projectName oc 1
 echo "edit finished"
 
 echo "cleaning..."
+
+# init初始化
 cd ../$projectName
 git init
 git remote add origin $sshRepo  &> /dev/null
@@ -166,3 +171,6 @@ git rm -rf --cached $projectName.xcodeproj/project.xcworkspace/xcuserdata/ &> /d
 pod update --verbose --no-repo-update
 echo "clean finished"
 echo "finished"
+
+# 拷贝模板代码，上传git代码，上传到私有库
+./upload.sh

@@ -152,3 +152,6 @@ git rm -rf --cached $projectName.xcodeproj/project.xcworkspace/xcuserdata/ &> /d
 pod update --verbose --no-repo-update
 echo "clean finished"
 echo "finished"
+
+# 拷贝模板代码，上传git代码，上传到私有库
+./upload.sh

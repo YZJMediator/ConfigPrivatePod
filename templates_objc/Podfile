@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@pkg.poizon.com:duapp/iOS/DUSpecs.git'
+source 'http://10.101.72.226/saas_ios_group/privatepod.git'
 
 use_frameworks!
 use_modular_headers!
